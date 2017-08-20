@@ -115,7 +115,7 @@ extern "C" {
 #define LPC_SCT             ((LPC_SCT_T         *) LPC_SCT_BASE)
 #define LPC_DMA             ((LPC_DMA_T         *) LPC_DMA_BASE)
 #define LPC_GPIO_PORT       ((LPC_GPIO_T        *) LPC_GPIO_PORT_BASE)
-#define LPC_GPIO			      ((LPC_GPIO_T        *) LPC_GPIO_PORT_BASE)
+#define LPC_GPIO            ((LPC_GPIO_T        *) LPC_GPIO_PORT_BASE)
 #define LPC_PININT          ((LPC_PIN_INT_T     *) LPC_PIN_INT_BASE)
 #define LPC_IOCON           ((LPC_IOCON_T       *) LPC_IOCON_BASE)
 #define LPC_SWM             ((LPC_SWM_T         *) LPC_SWM_BASE)
@@ -124,6 +124,25 @@ extern "C" {
 #define LPC_INMUX_INMUX     ((LPC_INMUX_INMUX_T *) LPC_INMUX_INMUX_BASE)
 #define LPC_FMC             ((LPC_FMC_T         *) LPC_FMC_BASE)
 #define LPC_MRT             ((LPC_MRT_T         *) LPC_MRT_BASE)
+
+
+//------------- Capacitive Touch module (CAPT) ----------------
+typedef struct {
+  __IO uint32_t CTRL;        // 0x00
+  __IO uint32_t STATUS;      // 0x04
+  __IO uint32_t POLL_TCNT;   // 0x08
+  __I  uint32_t reserved0;   // 0x0C
+  __IO uint32_t INTENSET;    // 0x10
+  __O  uint32_t INTENCLR;    // 0x14
+  __I  uint32_t INTSTAT;     // 0x18
+  __I  uint32_t reserved1;   // 0x1C
+  __I  uint32_t TOUCH;       // 0x20
+  __I  uint32_t A_hole[1014];// 0x24 - 0xFF8
+  __I  uint32_t ID;          // 0xFFC
+} LPC_CAPT_T;
+
+#define LPC_CAPT_BASE       (0x40060000UL)
+#define LPC_CAPT            ((LPC_CAPT_T        *) LPC_CAPT_BASE)
 
 /**
  * @}

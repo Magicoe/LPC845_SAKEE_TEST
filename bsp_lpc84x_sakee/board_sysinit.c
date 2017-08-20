@@ -177,34 +177,34 @@ STATIC void SystemSetupMuxing(void)
 	/* Enable IOCON clock */
 	Chip_Clock_EnablePeriphClock(SYSCON_CLOCK_IOCON);
 
-#if (LPC8XX_USE_XTAL_OSC == 1)
-#if (LPC8XX_USE_CLKIN == 1)
-	Chip_SWM_FixedPinEnable(SWM_FIXED_CLKIN, 1);
-	/* Configure the pins for CLKIN. */
-	Chip_IOCON_PinSetMode(IOCON_PIO0_1, PIN_MODE_INACTIVE);
-#else
-	/* Use Switch Matrix Tool swm.c file for the Pin Enable 0 variable */
-	Chip_SWM_FixedPinEnable(SWM_FIXED_XTALIN, 1);
-	Chip_SWM_FixedPinEnable(SWM_FIXED_XTALOUT, 1);
-	/* Configure the pins p0.8 and p0.9 for XTALIN/XTALOUT, neither pull-up nor pull-down. */
-	Chip_IOCON_PinSetMode(IOCON_PIO0_8, PIN_MODE_INACTIVE);
-	Chip_IOCON_PinSetMode(IOCON_PIO0_9, PIN_MODE_INACTIVE);	
-#endif
-#endif /* (LPC8XX_USE_XTAL_OSC == 1) */
+//#if (LPC8XX_USE_XTAL_OSC == 1)
+//#if (LPC8XX_USE_CLKIN == 1)
+//	Chip_SWM_FixedPinEnable(SWM_FIXED_CLKIN, 1);
+//	/* Configure the pins for CLKIN. */
+//	Chip_IOCON_PinSetMode(IOCON_PIO0_1, PIN_MODE_INACTIVE);
+//#else
+//	/* Use Switch Matrix Tool swm.c file for the Pin Enable 0 variable */
+//	Chip_SWM_FixedPinEnable(SWM_FIXED_XTALIN, 1);
+//	Chip_SWM_FixedPinEnable(SWM_FIXED_XTALOUT, 1);
+//	/* Configure the pins p0.8 and p0.9 for XTALIN/XTALOUT, neither pull-up nor pull-down. */
+//	Chip_IOCON_PinSetMode(IOCON_PIO0_8, PIN_MODE_INACTIVE);
+//	Chip_IOCON_PinSetMode(IOCON_PIO0_9, PIN_MODE_INACTIVE);	
+//#endif
+//#endif /* (LPC8XX_USE_XTAL_OSC == 1) */
 
-#if (LPC8XX_USE_CLKIN == 1)
-	/* Assign the CLKOUT function to pin p0.18 */
-	Chip_SWM_MovablePinAssign(SWM_CLKOUT_O, 18);
+//#if (LPC8XX_USE_CLKIN == 1)
+//	/* Assign the CLKOUT function to pin p0.18 */
+//	Chip_SWM_MovablePinAssign(SWM_CLKOUT_O, 18);
 
-	/* Configure the pin for CLKOUT, neither pull-up nor pull-down */
-	Chip_IOCON_PinSetMode(IOCON_PIO0_18, PIN_MODE_INACTIVE);
-#else
-	/* Assign the CLKOUT function to a pin, PIO0_1 */
-	Chip_SWM_MovablePinAssign(SWM_CLKOUT_O, 1);		// Conflicts with use of CLKIN
+//	/* Configure the pin for CLKOUT, neither pull-up nor pull-down */
+//	Chip_IOCON_PinSetMode(IOCON_PIO0_18, PIN_MODE_INACTIVE);
+//#else
+//	/* Assign the CLKOUT function to a pin, PIO0_1 */
+//	Chip_SWM_MovablePinAssign(SWM_CLKOUT_O, 1);		// Conflicts with use of CLKIN
 
-	/* Configure the pin for CLKOUT on PIO0_1, neither pull-up nor pull-down */
-	Chip_IOCON_PinSetMode(IOCON_PIO0_1, PIN_MODE_INACTIVE);	
-#endif
+//	/* Configure the pin for CLKOUT on PIO0_1, neither pull-up nor pull-down */
+//	Chip_IOCON_PinSetMode(IOCON_PIO0_1, PIN_MODE_INACTIVE);	
+//#endif
 }
 
 /*****************************************************************************

@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>CORE_M0PLUS</Define>
               <Undefine></Undefine>
-              <IncludePath>..\csp_lpc84x;..\bsp_lpc84x_sakee</IncludePath>
+              <IncludePath>..\csp_lpc84x;..\bsp_lpc84x_sakee;..\application\fatfs\fatfs_0.11a\src;..\application</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -388,6 +388,51 @@
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\application\main.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_all_board.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_all_board.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_spi_oled.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_spi_oled.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_i2c_se95.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_i2c_se95.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_dac_buzzer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_dac_buzzer.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_capt_button.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_capt_button.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_int_ec11.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_int_ec11.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_spi_sdcard.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_spi_sdcard.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_i2c_eeprom.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_i2c_eeprom.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_adc_conti.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\driver_adc_conti.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -643,6 +688,21 @@
               <FileName>sysinit.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\bsp_lpc84x_sakee\sysinit.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>fatfs</GroupName>
+          <Files>
+            <File>
+              <FileName>diskio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\fatfs\fatfs_0.11a\src\diskio.c</FilePath>
+            </File>
+            <File>
+              <FileName>ff.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\application\fatfs\fatfs_0.11a\src\ff.c</FilePath>
             </File>
           </Files>
         </Group>
